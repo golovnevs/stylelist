@@ -11,7 +11,7 @@ My product StyleList allows users to find their basic wardrobe key pieces based 
 ## Screenshots
 
 ![Main Page](docs/main.png)
-![Page with links](docs/result.png)
+![Page with result](docs/links.png)
 
 ## Features:
 
