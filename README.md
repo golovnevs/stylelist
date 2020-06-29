@@ -11,12 +11,10 @@ My product StyleList allows users to find their basic wardrobe key pieces based 
 ## Screenshots
 
 ![Main Page](docs/main.png)
-![Page with results of quiz](docs/result.png)
 ![Page with links](docs/links.png)
 
 ## Features:
 
 - displays photos with outfits in pairs
 - allows user to click on the photo and records data about the user's choice (increases the counter of clicks for the photo)
-- displays photos with user liked
-- displays a list of links, associated with the photo
+- displays photos which user liked with a list of links, associated with the photo
