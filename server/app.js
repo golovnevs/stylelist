@@ -19,8 +19,10 @@ app.get('/get-results', (req, res) => {
 })
 
 app.post('/save-results', (req, res) => {
-  db.push({ name: 'Petya', result: 4 })
-  res.sendStatus(201)
+  setTimeout(() => {
+    db.push({ name: 'Petya', result: 4 })
+    res.sendStatus(201)
+  }, 2000)
 })
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${ port }`))
