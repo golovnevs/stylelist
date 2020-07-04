@@ -1,8 +1,17 @@
 <html>
 <head></head>
 <body>
+<h1>RESULTS</h1>
+<pre id="results"/>
 <script>
-	fetch()
+  const response = fetch('http://localhost:3000/get-results')
+  response.then(response => {
+    const responseBodyAsJson = response.json()
+    responseBodyAsJson.then(data => {
+      console.log(data)
+      document.getElementById('results').innerHTML = JSON.stringify(data, null, 2)
+    })
+  })
 </script>
 </body>
 </html>
