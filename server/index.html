@@ -1,0 +1,33 @@
+<html>
+<head></head>
+<body>
+<h1>RESULTS</h1>
+<pre id="results"></pre>
+<button id="petyaButton">Add Petya</button>
+<script>
+  const resultsBlock = document.getElementById('results')
+
+  const getResults = () => {
+    const response = fetch('http://localhost:3000/get-results')
+    response.then(res => {
+      const responseBodyAsJson = res.json()
+      responseBodyAsJson.then(data => {
+        console.log(data)
+        resultsBlock.innerHTML = JSON.stringify(data, null, 2)
+      })
+    })
+    response.catch(error => {
+      resultsBlock.innerHTML = error
+    })
+  }
+  getResults()
+
+  document.getElementById('petyaButton').addEventListener('click', () => {
+    const response = fetch('http://localhost:3000/save-results', { method: 'POST' })
+    response.then(() => {
+      getResults()
+    })
+  })
+</script>
+</body>
+</html>
