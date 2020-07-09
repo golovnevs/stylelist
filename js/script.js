@@ -96,14 +96,14 @@ let rightOutfit = 1;
 let steps = 1;
 let totalResult = 0;
 const startBtn = document.getElementById('start');
-startBtn.addEventListener('click', displayContent);
+startBtn.addEventListener('click', startQuiz);
 let leftClickCounter = 0;
 let rightClickCounter = 0;
 let x = 0;
 let n = 0;
 
 function displayContent() {
-  if (steps <= 5) {
+ if (steps <= 5) {
     displayQuiz();
   } else {
       displayResult();
@@ -111,7 +111,7 @@ function displayContent() {
 };
 
 function displayQuiz () {
-  name = document.getElementById('inputName').value;
+
   const main = document.getElementById('main');
   quizDiv = document.createElement("div");
   quizDiv.setAttribute("class", "quiz");
@@ -150,6 +150,7 @@ function displayQuiz () {
 
 function displayResult() {
   removeDuplicates();
+  console.log(name,likedUniq)
   leftOutfit = 0;
   rightOutfit = 1;
   steps = 0; 
@@ -170,7 +171,6 @@ function displayResult() {
     linksBlock.setAttribute("class", "desc");
       for (n = 0; n< likedUniq[x].items.length; n++) {
         linksList = document.createElement("h3");
-        console.log(x,n);
         linksList.innerHTML = `
         <a href ="https://www.asos.com/search/?q=${links[likedUniq[x].items[n]].name}" target="_blank">
         ${links[likedUniq[x].items[n]].name}
@@ -222,5 +222,7 @@ function removeDuplicates() {
   }
   return likedUniq;
 };
-
-
+function startQuiz() {
+  name = document.getElementById('inputName').value;
+  displayContent();
+};
