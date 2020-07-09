@@ -88,7 +88,7 @@ let links = [
     src: 'https://www.asos.com/search/?q=white+sneakers'
   }
 ];
-let name = prompt.getElementById('inputName');
+let name = document.getElementById('inputName').value;
 let liked = [];
 let likedUniq = [];
 let leftOutfit = 0;
