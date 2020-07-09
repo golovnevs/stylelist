@@ -88,9 +88,9 @@ let links = [
     src: 'https://www.asos.com/search/?q=white+sneakers'
   }
 ];
-
+let name = prompt.getElementById('inputName');
 let liked = [];
-let likedUniq=[];
+let likedUniq = [];
 let leftOutfit = 0;
 let rightOutfit = 1; 
 let steps = 1;
@@ -99,8 +99,8 @@ const startBtn = document.getElementById('start');
 startBtn.addEventListener('click', displayContent);
 let leftClickCounter = 0;
 let rightClickCounter = 0;
-let x=0;
-let n=0;
+let x = 0;
+let n = 0;
 
 function displayContent() {
   if (steps <= 5) {
