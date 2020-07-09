@@ -88,7 +88,7 @@ let links = [
     src: 'https://www.asos.com/search/?q=white+sneakers'
   }
 ];
-let name = document.getElementById('inputName').value;
+let name;
 let liked = [];
 let likedUniq = [];
 let leftOutfit = 0;
@@ -111,6 +111,7 @@ function displayContent() {
 };
 
 function displayQuiz () {
+  name = document.getElementById('inputName').value;
   const main = document.getElementById('main');
   quizDiv = document.createElement("div");
   quizDiv.setAttribute("class", "quiz");
