@@ -1,28 +1,28 @@
 const express = require('express')
+const bodyParser = require('body-parser')
+const fs = require('fs')
 const app = express()
 const port = 3000
 
-const db = [
-  {
-    name: 'vasya',
-    result: 5
-  }
-]
+// parse application/json
+app.use(bodyParser.json())
 
-app.all('*', (req, res, next) => {
+app.use('*', (req, res, next) => {
   res.set('Access-Control-Allow-Origin', '*')
+  res.set('Access-Control-Allow-Headers', '*')
   next()
 })
 
 app.get('/get-results', (req, res) => {
+  const db = fs.readFileSync('./db.json')
   res.send(db)
 })
 
 app.post('/save-results', (req, res) => {
-  setTimeout(() => {
-    db.push({ name: 'Petya', result: 4 })
-    res.sendStatus(201)
-  }, 2000)
+  const db = JSON.parse(fs.readFileSync('./db.json'))
+  db.push({ text: req.body.text })
+  fs.writeFileSync('./db.json', JSON.stringify(db))
+  res.sendStatus(201)
 })
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${ port }`))
