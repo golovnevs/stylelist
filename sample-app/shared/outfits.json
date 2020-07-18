@@ -1,0 +1,52 @@
+[
+  {
+    "outfitId": 1,
+    "imgSrc": "images/1.jpg",
+    "rank": 0,
+    "rejectedCounter": 0,
+    "items": [0, 1, 2, 3, 4, 5],
+    "tags": ["sport", " classic"]
+  }, {
+  "outfitId": 2,
+  "imgSrc": "images/2.jpg",
+  "rank": 0,
+  "rejectedCounter": 0,
+  "items": [1, 2, 3],
+  "tags": ["sport", " classic"]
+}, {
+  "outfitId": 3,
+  "imgSrc": "images/3.jpg",
+  "rank": 0,
+  "rejectedCounter": 0,
+  "items": [1, 2, 4, 5],
+  "tags": ["sport", " classic"]
+}, {
+  "outfitId": 4,
+  "imgSrc": "images/4.jpg",
+  "rank": 0,
+  "rejectedCounter": 0,
+  "items": [2],
+  "tags": ["sport", " classic"]
+}, {
+  "outfitId": 5,
+  "imgSrc": "images/5.jpg",
+  "rank": 0,
+  "rejectedCounter": 0,
+  "items": [1, 2, 3],
+  "tags": ["sport", " classic"]
+}, {
+  "outfitId": 6,
+  "imgSrc": "images/6.jpg",
+  "rank": 0,
+  "rejectedCounter": 0,
+  "items": [2],
+  "tags": ["sport", " classic"]
+}, {
+  "outfitId": 7,
+  "imgSrc": "images/5.jpg",
+  "rank": 0,
+  "rejectedCounter": 0,
+  "items": [1, 2, 3],
+  "tags": ["sport", " classic"]
+}
+]

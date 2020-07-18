@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const fs = require('fs')
+const dbService = require('./db-service')
+const isEmpty = require('../shared/is-empty')
 const app = express()
 const port = 3000
 
@@ -14,14 +15,15 @@ app.use('*', (req, res, next) => {
 })
 
 app.get('/get-results', (req, res) => {
-  const db = fs.readFileSync('./db.json')
-  res.send(db)
+  res.send(dbService.getDb())
 })
 
 app.post('/save-results', (req, res) => {
-  const db = JSON.parse(fs.readFileSync('./db.json'))
-  db.push({ text: req.body.text })
-  fs.writeFileSync('./db.json', JSON.stringify(db))
+  const text = req.body.text
+  if (isEmpty(text)) {
+    return res.sendStatus(400)
+  }
+  dbService.writeDb(text)
   res.sendStatus(201)
 })
 
